@@ -1,11 +1,10 @@
-import Debug from 'debug';
+import debug from 'debug';
 import app from './app';
 
-const debug = Debug(process.env.APP_NAME);
-const port = process.env.PORT;
+const port = process.env.PORT
 
 app.set('port', port);
 app.listen(
     app.get('port'),
-    () => debug(`Express server listening on port ${port}`),
-);
+    () => debug(`${process.env.APP_NAME}:run`)(`Express server listening on port ${port}`),
+)

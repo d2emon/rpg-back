@@ -7,18 +7,19 @@ import {
     error404,
     errorHandler,
 } from './handlers/error';
-import log from './log'
 // import routes from './routes'
 
 const app =express();
 
 const publicPath = path.join(__dirname, '..', 'public');
-log.debug(`Public path: ${publicPath}`);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(publicPath));
+
+// mongoDb.on('error', error => debug(error || ''));
+// mongoDb.once('open', () => debug('MongoDB connected'));
 
 // app.use('/', routes);
 

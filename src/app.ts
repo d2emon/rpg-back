@@ -7,7 +7,9 @@ import {
     error404,
     errorHandler,
 } from './handlers/error';
-// import routes from './routes'
+
+import generateRoutes from './routes/generate';
+import campaignRoutes from './routes/campaign';
 
 const app =express();
 
@@ -21,7 +23,8 @@ app.use(express.static(publicPath));
 // mongoDb.on('error', error => debug(error || ''));
 // mongoDb.once('open', () => debug('MongoDB connected'));
 
-// app.use('/', routes);
+app.use('/v1/generate', generateRoutes);
+app.use('/v1/campaign', campaignRoutes);
 
 app.use(error404);
 app.use(errorHandler(app.get('env')));

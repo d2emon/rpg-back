@@ -10,19 +10,22 @@ class HttpException extends Error {
     }
 }
 
+const errorResponse = (message: string, code?: number, data?: any) => ({
+    error: {
+        code: code || 500,
+        message,
+        data,
+    },
+})
+
 export const error404 = (req: express.Request, res: any, next: express.NextFunction) => res
     .status(404)
-    .json({
-        error: {
-            message: 'Not Found',
-        },
-    })
+    .json(errorResponse('Not Found', 404))
 
 export const errorHandler = (env: string) => (error: HttpException, req: express.Request, res: express.Response) => res
     .status(error.status || 500)
-    .json({
-        error: {
-            error: ((env === 'development') ? error : undefined),
-            message: error.message,
-        },
-    })
+    .json(errorResponse(
+        error.message,
+        error.status,
+        (env === 'development') ? error : undefined,
+    ))

@@ -23,6 +23,8 @@ export interface NPC {
     location?: string;
     notes?: string;
 
+    skillBonus?: number;
+
     death?: Death;
 }
 

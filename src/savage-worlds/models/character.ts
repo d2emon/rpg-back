@@ -8,6 +8,8 @@ import {
     StatDice,
     halfValue,
 } from '../helpers/dice';
+import links from '../helpers/links';
+import character from "../../helpers/character";
 
 export interface ICharacterDocument extends Document {
     slug: string;
@@ -128,6 +130,9 @@ const CharacterSchema = new Schema({
         of: CharacterStatSchema,
     },
 
+    edges: [String],
+    hindrances: [String],
+
     description: String,
 });
 
@@ -149,7 +154,7 @@ CharacterSchema.virtual('toughness')
 
 CharacterSchema.virtual('link')
     .get(function () {
-        return `${process.env.API_URL}api/v1.0/sw/character/${this.slug}`;
+        return links.character(this.slug);
     });
 
 CharacterSchema.set('toJSON', {

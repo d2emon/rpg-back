@@ -1,9 +1,9 @@
 import express from 'express';
+import { Query } from 'mongoose';
 import Skill, {
     ISkillDocument,
 } from '../models/skill';
 import skillsFixture from '../fixtures/skills';
-import {Query} from "mongoose";
 
 export const getSkills = async (req: express.Request, res: express.Response) => {
     try {

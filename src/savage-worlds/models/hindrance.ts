@@ -5,20 +5,20 @@ import mongoose, {
 } from 'mongoose';
 import links from '../helpers/links';
 
-export interface ISkillDocument extends Document {
+export interface IHindranceDocument extends Document {
     slug: string;
     name: string;
-    trait: string;
+    major: boolean;
     description?: string;
 
     // Virtual
     link: string;
 }
 
-export interface ISkillModel extends Model<ISkillDocument> {
+export interface IHindranceModel extends Model<IHindranceDocument> {
 }
 
-const SkillSchema = new Schema({
+const HindranceSchema = new Schema({
     slug: {
         type: String,
         required: true,
@@ -28,26 +28,23 @@ const SkillSchema = new Schema({
         type: String,
         required: true,
     },
-    trait: {
-        type: String,
-        required: true,
-    },
+    major: Boolean,
     description: String,
 });
 
-SkillSchema.virtual('link')
+HindranceSchema.virtual('link')
     .get(function () {
-        return links.skill(this.slug);
+        return links.hindrance(this.slug);
     });
 
-SkillSchema.set('toObject', {
+HindranceSchema.set('toObject', {
     versionKey: false,
     transform: (doc, ret) => {
         delete ret._id;
     },
 });
 
-SkillSchema.set('toJSON', {
+HindranceSchema.set('toJSON', {
     virtuals: true,
     versionKey: false,
     transform: (doc, ret) => {
@@ -55,6 +52,6 @@ SkillSchema.set('toJSON', {
     },
 });
 
-const Skill: ISkillModel = mongoose.model<ISkillDocument, ISkillModel>('Skill', SkillSchema);
+const Hindrance: IHindranceModel = mongoose.model<IHindranceDocument, IHindranceModel>('Hindrance', HindranceSchema);
 
-export default Skill;
+export default Hindrance;

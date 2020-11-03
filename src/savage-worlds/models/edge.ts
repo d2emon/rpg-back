@@ -5,20 +5,20 @@ import mongoose, {
 } from 'mongoose';
 import links from '../helpers/links';
 
-export interface ISkillDocument extends Document {
+export interface IEdgeDocument extends Document {
     slug: string;
     name: string;
-    trait: string;
+    requirements: string[];
     description?: string;
 
     // Virtual
     link: string;
 }
 
-export interface ISkillModel extends Model<ISkillDocument> {
+export interface IEdgeModel extends Model<IEdgeDocument> {
 }
 
-const SkillSchema = new Schema({
+const EdgeSchema = new Schema({
     slug: {
         type: String,
         required: true,
@@ -28,26 +28,23 @@ const SkillSchema = new Schema({
         type: String,
         required: true,
     },
-    trait: {
-        type: String,
-        required: true,
-    },
+    requirements: [String],
     description: String,
 });
 
-SkillSchema.virtual('link')
+EdgeSchema.virtual('link')
     .get(function () {
-        return links.skill(this.slug);
+        return links.edge(this.slug);
     });
 
-SkillSchema.set('toObject', {
+EdgeSchema.set('toObject', {
     versionKey: false,
     transform: (doc, ret) => {
         delete ret._id;
     },
 });
 
-SkillSchema.set('toJSON', {
+EdgeSchema.set('toJSON', {
     virtuals: true,
     versionKey: false,
     transform: (doc, ret) => {
@@ -55,6 +52,6 @@ SkillSchema.set('toJSON', {
     },
 });
 
-const Skill: ISkillModel = mongoose.model<ISkillDocument, ISkillModel>('Skill', SkillSchema);
+const Edge: IEdgeModel = mongoose.model<IEdgeDocument, IEdgeModel>('Edge', EdgeSchema);
 
-export default Skill;
+export default Edge;

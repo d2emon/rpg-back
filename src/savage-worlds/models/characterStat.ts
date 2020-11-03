@@ -1,10 +1,4 @@
 import { Schema } from 'mongoose';
-import { DiceId } from './dice';
-
-export interface CharacterStat {
-    dice: DiceId;
-    modifier?: number;
-}
 
 const CharacterStatSchema = new Schema({
     dice: {

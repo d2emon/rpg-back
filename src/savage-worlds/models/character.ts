@@ -4,8 +4,9 @@ import mongoose, {
     Schema,
 } from 'mongoose';
 import CharacterStatSchema from './characterStat';
-import dice, {
-    diceMaxValue, halfValue, StatDice,
+import {
+    StatDice,
+    halfValue,
 } from '../helpers/dice';
 
 export interface ICharacterDocument extends Document {

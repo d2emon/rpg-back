@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(publicPath));
 
-connect(process.env.MONGO_URI);
+app.set('db', connect(process.env.MONGO_URI));
 mongoDb.on('error', (error: string) => debug(`${process.env.APP_NAME}:db:error`)(error));
 mongoDb.once('open', () => debug(`${process.env.APP_NAME}:db`)('MongoDB connected'));
 

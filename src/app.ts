@@ -1,4 +1,5 @@
 import bodyParser from 'body-parser'
+import debug from 'debug';
 import express from 'express'
 // import mongoose from 'mongoose'
 import path from 'path'
@@ -13,8 +14,10 @@ import mongoDb, {
 
 import generateRoutes from './routes/generate';
 import campaignRoutes from './routes/campaign';
+
 import swCharacterRoutes from './savage-worlds/routes/characters';
-import debug from 'debug';
+import swSkillRoutes from './savage-worlds/routes/skills';
+import swFillRoutes from './savage-worlds/routes/fill';
 
 const app =express();
 
@@ -31,7 +34,10 @@ mongoDb.once('open', () => debug(`${process.env.APP_NAME}:db`)('MongoDB connecte
 
 app.use('/api/v1.0/generate', generateRoutes);
 app.use('/api/v1.0/campaign', campaignRoutes);
+
 app.use('/api/v1.0/sw/character', swCharacterRoutes);
+app.use('/api/v1.0/sw/skill', swSkillRoutes);
+app.use('/api/v1.0/sw/admin/fill', swFillRoutes);
 
 app.use(error404);
 app.use(errorHandler(app.get('env')));

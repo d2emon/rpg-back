@@ -8,6 +8,7 @@ import links from '../helpers/links';
 export interface IEdgeDocument extends Document {
     slug: string;
     name: string;
+    group: string;
     requirements: string[];
     description?: string;
 
@@ -28,6 +29,7 @@ const EdgeSchema = new Schema({
         type: String,
         required: true,
     },
+    group: String,
     requirements: [String],
     description: String,
 });

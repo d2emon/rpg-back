@@ -9,7 +9,7 @@ export interface IEdgeDocument extends Document {
     slug: string;
     name: string;
     group: string;
-    requirements: string[];
+    requirements: { [key: string]: any };
     description?: string;
 
     // Virtual
@@ -30,7 +30,25 @@ const EdgeSchema = new Schema({
         required: true,
     },
     group: String,
-    requirements: [String],
+    requirements: {
+        rank: String,
+
+        agility: String,
+        smarts: String,
+        spirit: String,
+        strength: String,
+        vigor: String,
+
+        special: Boolean,
+        wildCard: Boolean,
+        edges: [String],
+        skills: {
+            type: Map,
+            of: String,
+        },
+
+        any: [Map],
+    },
     description: String,
 });
 

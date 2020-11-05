@@ -37,6 +37,7 @@ app.use('/api/v1.0/campaign', campaignRoutes);
 
 app.use('/api/v1.0/sw/character', swCharacterRoutes);
 app.use('/api/v1.0/sw/skill', swSkillRoutes);
+
 app.use('/api/v1.0/sw/admin/fill', swFillRoutes);
 
 app.use(error404);

@@ -37,7 +37,7 @@ const templates: ICharacterTemplateDocument[] = [
             driving: { dice: 'd8' },
             fight: { dice: 'd4' },
             notice: { dice: 'd6' },
-            shoot: { dice: 'd6' },
+            shooting: { dice: 'd6' },
         },
         additionalSkills: 7,
         edges: [

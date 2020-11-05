@@ -2,123 +2,118 @@ import Skill, {ISkillDocument} from '../models/skill';
 
 const skills: ISkillDocument[] = [
     new Skill({
-        slug: 'boating',
-        name: 'Boating',
-        trait: 'agility',
-    }),
-    new Skill({
-        slug: 'climbing',
-        name: 'Climbing',
-        trait: 'strength',
-    }),
-    new Skill({
-        slug: 'driving',
-        name: 'Driving',
-        trait: 'agility',
-    }),
-    new Skill({
-        slug: 'fighting',
-        name: 'Fighting',
-        trait: 'agility',
-    }),
-    new Skill({
         slug: 'gambling',
-        name: 'Gambling',
-        trait: 'smarts',
-    }),
-    new Skill({
-        slug: 'guts',
-        name: 'Guts',
-        trait: 'spirit',
-    }),
-    new Skill({
-        slug: 'healing',
-        name: 'Healing',
-        trait: 'smarts',
-    }),
-    new Skill({
-        slug: 'intimidation',
-        name: 'Intimidation',
-        trait: 'spirit',
-    }),
-    new Skill({
-        slug: 'investigation',
-        name: 'Investigation',
-        trait: 'smarts',
-    }),
-    new Skill({
-        slug: 'knowledge',
-        name: 'Knowledge',
-        trait: 'smarts',
-    }),
-    new Skill({
-        slug: 'lockpicking',
-        name: 'Lockpicking',
-        trait: 'agility',
-    }),
-    new Skill({
-        slug: 'notice',
-        name: 'Notice',
-        trait: 'smarts',
-    }),
-    new Skill({
-        slug: 'persuasion',
-        name: 'Persuasion',
-        trait: 'spirit',
-    }),
-    new Skill({
-        slug: 'piloting',
-        name: 'Piloting',
-        trait: 'agility',
-    }),
-    new Skill({
-        slug: 'repair',
-        name: 'Repair',
+        name: 'Азартные игры',
         trait: 'smarts',
     }),
     new Skill({
         slug: 'riding',
-        name: 'Riding',
+        name: 'Верховая езда',
         trait: 'agility',
     }),
     new Skill({
-        slug: 'shooting',
-        name: 'Shooting',
+        slug: 'lockpicking',
+        name: 'Взлом',
         trait: 'agility',
     }),
     new Skill({
-        slug: 'stealth',
-        name: 'Stealth',
-        trait: 'agility',
-    }),
-    new Skill({
-        slug: 'streetwise',
-        name: 'Streetwise',
+        slug: 'notice',
+        name: 'Внимание',
         trait: 'smarts',
+    }),
+    new Skill({
+        slug: 'driving',
+        name: 'Вождение',
+        trait: 'agility',
     }),
     new Skill({
         slug: 'survival',
-        name: 'Survival',
+        name: 'Выживание',
         trait: 'smarts',
     }),
     new Skill({
+        slug: 'tracking',
+        name: 'Выслеживание',
+        trait: 'smarts',
+    }),
+    new Skill({
+        slug: 'fighting',
+        name: 'Драка',
+        trait: 'agility',
+    }),
+    new Skill({
+        slug: 'intimidation',
+        name: 'Запугивание',
+        trait: 'spirit',
+    }),
+    new Skill({
+        slug: 'knowledge',
+        name: 'Знание',
+        trait: 'smarts',
+    }),
+    new Skill({
+        slug: 'climbing',
+        name: 'Лазание',
+        trait: 'strength',
+    }),
+    new Skill({
+        slug: 'healing',
+        name: 'Лечение',
+        trait: 'smarts',
+    }),
+    new Skill({
+        slug: 'stealth',
+        name: 'Маскировка',
+        trait: 'agility',
+    }),
+    new Skill({
+        slug: 'throwing',
+        name: 'Метание',
+        trait: 'agility',
+    }),
+    new Skill({
+        slug: 'piloting',
+        name: 'Пилотирование',
+        trait: 'agility',
+    }),
+    new Skill({
         slug: 'swimming',
-        name: 'Swimming',
+        name: 'Плавание',
         trait: 'agility',
     }),
     new Skill({
         slug: 'taunt',
-        name: 'Taunt',
+        name: 'Провокация',
         trait: 'smarts',
     }),
     new Skill({
-        slug: 'throwing',
-        name: 'Throwing',
+        slug: 'investigation',
+        name: 'Расследование',
+        trait: 'smarts',
+    }),
+    new Skill({
+        slug: 'repair',
+        name: 'Ремонт',
+        trait: 'smarts',
+    }),
+    new Skill({
+        slug: 'shooting',
+        name: 'Стрельба',
         trait: 'agility',
     }),
     new Skill({
-        slug: 'tracking',
-        name: 'Tracking',
+        slug: 'boating',
+        name: 'Судовождение',
+        trait: 'agility',
+    }),
+    new Skill({
+        slug: 'persuasion',
+        name: 'Убеждение',
+        trait: 'spirit',
+    }),
+    new Skill({
+        slug: 'streetwise',
+        name: 'Уличное чутье',
         trait: 'smarts',
     }),
 ];

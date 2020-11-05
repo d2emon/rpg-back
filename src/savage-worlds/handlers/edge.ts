@@ -43,8 +43,7 @@ export const getEdge = async (req: express.Request, res: express.Response) => {
 
 export const updateEdge = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Edge.findByIdAndUpdate(characterId, req.body);
+        const result = await Edge.findByIdAndUpdate(req.params.id, req.body);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });
@@ -53,8 +52,7 @@ export const updateEdge = async (req: express.Request, res: express.Response) =>
 
 export const removeEdge = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Edge.findByIdAndDelete(characterId);
+        const result = await Edge.findByIdAndDelete(req.params.id);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });

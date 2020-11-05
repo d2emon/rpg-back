@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/', getSkills);
 router.post('/', addSkill);
 router.get('/:slug', getSkill);
-router.put('/:characterId', updateSkill);
-router.delete('/:characterId', removeSkill);
+router.put('/:id', updateSkill);
+router.delete('/:id', removeSkill);
 
 export default router;

@@ -17,7 +17,6 @@ services:
   backend:
     build: .
     command: npm run serve
-    container_name: backend
     depends_on:
       - mongo
     env_file:

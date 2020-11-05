@@ -43,8 +43,7 @@ export const getHindrance = async (req: express.Request, res: express.Response) 
 
 export const updateHindrance = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Hindrance.findByIdAndUpdate(characterId, req.body);
+        const result = await Hindrance.findByIdAndUpdate(req.params.id, req.body);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });
@@ -53,8 +52,7 @@ export const updateHindrance = async (req: express.Request, res: express.Respons
 
 export const removeHindrance = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Hindrance.findByIdAndDelete(characterId);
+        const result = await Hindrance.findByIdAndDelete(req.params.id);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });

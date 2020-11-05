@@ -38,8 +38,7 @@ export const addCharacter = async (req: express.Request, res: express.Response) 
 
 export const updateCharacter = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Character.findByIdAndUpdate(characterId, req.body);
+        const result = await Character.findByIdAndUpdate(req.params.id, req.body);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });
@@ -48,10 +47,18 @@ export const updateCharacter = async (req: express.Request, res: express.Respons
 
 export const removeCharacter = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Character.findByIdAndDelete(characterId);
+        const result = await Character.findByIdAndDelete(req.params.id);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });
     }
 }
+
+// 2 Points
+// Upgrade stat
+// Add trait
+// Upgrade overdrive skill
+// 1 Points
+// Upgrade skill
+// Add trait
+// Add extra $500

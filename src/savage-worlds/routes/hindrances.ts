@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/', getHindrances);
 router.post('/', addHindrance);
 router.get('/:slug', getHindrance);
-router.put('/:characterId', updateHindrance);
-router.delete('/:characterId', removeHindrance);
+router.put('/:id', updateHindrance);
+router.delete('/:id', removeHindrance);
 
 export default router;

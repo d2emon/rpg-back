@@ -9,12 +9,12 @@ import {
     halfValue,
 } from '../helpers/dice';
 import links from '../helpers/links';
-import character from "../../helpers/character";
 
 export interface ICharacterDocument extends Document {
     slug: string;
 
     name: string;
+    race: string;
     origin: string;
     template: string;
     movement: string;

@@ -9,6 +9,9 @@ import {
 import {
     fillHindrances,
 } from '../handlers/hindrance';
+import {
+    fillRaces,
+} from '../handlers/race';
 
 const router = express.Router();
 
@@ -17,5 +20,6 @@ router.use(checkAdmin);
 router.post('/skills', fillSkills);
 router.post('/edges', fillEdges);
 router.post('/hindrances', fillHindrances);
+router.post('/races', fillRaces);
 
 export default router;

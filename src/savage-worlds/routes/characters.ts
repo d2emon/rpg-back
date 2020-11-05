@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/', getCharacters);
 router.post('/', addCharacter);
 router.get('/:slug', getCharacter);
-router.put('/:characterId', updateCharacter);
-router.delete('/:characterId', removeCharacter);
+router.put('/:id', updateCharacter);
+router.delete('/:id', removeCharacter);
 
 export default router;

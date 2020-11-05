@@ -42,8 +42,7 @@ export const getSkill = async (req: express.Request, res: express.Response) => {
 
 export const updateSkill = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Skill.findByIdAndUpdate(characterId, req.body);
+        const result = await Skill.findByIdAndUpdate(req.params.id, req.body);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });
@@ -52,8 +51,7 @@ export const updateSkill = async (req: express.Request, res: express.Response) =
 
 export const removeSkill = async (req: express.Request, res: express.Response) => {
     try {
-        const characterId = req.params.characterId || null;
-        const result = await Skill.findByIdAndDelete(characterId);
+        const result = await Skill.findByIdAndDelete(req.params.id);
         return res.json({ result });
     } catch (e) {
         return res.status(500).json({ error: e.message });

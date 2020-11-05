@@ -12,7 +12,7 @@ const router = express.Router();
 router.get('/', getEdges);
 router.post('/', addEdge);
 router.get('/:slug', getEdge);
-router.put('/:characterId', updateEdge);
-router.delete('/:characterId', removeEdge);
+router.put('/:id', updateEdge);
+router.delete('/:id', removeEdge);
 
 export default router;

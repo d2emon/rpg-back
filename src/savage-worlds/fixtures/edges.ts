@@ -66,12 +66,12 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'quick',
-        name: 'Быстроногий',
-        group: 'background',
+        slug: 'fleet-footed',
+        name: 'Fleet-Footed',
+        group: 'combat',
         requirements: {
             rank: 'novice',
-            agility: 'd8',
+            agility: 'd6',
         },
     }),
     new Edge({
@@ -119,7 +119,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'linguist', // ?
+        slug: 'linguist',
         name: 'Лингвист',
         group: 'background',
         requirements: {
@@ -155,7 +155,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'guts', // ?
+        slug: 'brave',
         name: 'Смелость',
         group: 'background',
         requirements: {
@@ -164,7 +164,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'swift', // ?
+        slug: 'quick',
         name: 'Стремительный',
         group: 'background',
         requirements: {
@@ -240,7 +240,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'improvisor', // ?
+        slug: 'improvisational-fighter',
         name: 'Боец-импровизатор',
         group: 'combat',
         requirements: {
@@ -258,7 +258,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'win-will', // ?
+        slug: 'killer-instinct',
         name: 'Воля к победе',
         group: 'combat',
         requirements: {
@@ -295,7 +295,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'counter-strike', // ?
+        slug: 'counterattack',
         name: 'Контратака',
         group: 'combat',
         requirements: {
@@ -306,7 +306,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'improved-counter-strike', // ?
+        slug: 'improved-counterattack',
         name: 'Контратака +',
         group: 'combat',
         requirements: {
@@ -355,7 +355,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'martial-arts', // ?
+        slug: 'martial-artist',
         name: 'Мастер боевых искусств',
         group: 'combat',
         requirements: {
@@ -366,7 +366,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'improved-martial-arts', // ?
+        slug: 'improved-martial-artist',
         name: 'Мастер боевых искусств +',
         group: 'combat',
         requirements: {
@@ -386,7 +386,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'keep-distance', // ?
+        slug: 'extraction',
         name: 'Разрыв дистанции',
         group: 'combat',
         requirements: {
@@ -395,7 +395,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'improved-keep-distance', // ?
+        slug: 'improved-extraction',
         name: 'Разрыв дистанции +',
         group: 'combat',
         requirements: {
@@ -443,7 +443,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'hard-hand', // ?
+        slug: 'brawler',
         name: 'Тяжелая рука',
         group: 'combat',
         requirements: {
@@ -452,7 +452,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'improved-hard-hand', // ?
+        slug: 'bruiser',
         name: 'Тяжелая рука +',
         group: 'combat',
         requirements: {
@@ -487,7 +487,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'uporstvo', // ?
+        slug: 'elan',
         name: 'Упорство',
         group: 'combat',
         requirements: {
@@ -543,17 +543,6 @@ const edges: IEdgeDocument[] = [
             edges: ['level-headed'],
         },
     }),
-    /*
-    new Edge({
-        slug: 'fleet-footed',
-        name: 'Fleet-Footed',
-        group: 'combat',
-        requirements: {
-            rank: 'novice',
-            agility: 'd6',
-        },
-    }),
-    */
 
     // Leadership Edges
     new Edge({
@@ -595,7 +584,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'leader', // ?
+        slug: 'leader-of-men',
         name: 'Предводитель',
         group: 'leadership',
         requirements: {
@@ -614,7 +603,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'personality-force', // ?
+        slug: 'command-presence',
         name: 'Сила личности',
         group: 'leadership',
         requirements: {
@@ -623,7 +612,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'tactic', // ?
+        slug: 'tactician',
         name: 'Тактик',
         group: 'leadership',
         requirements: {
@@ -688,7 +677,7 @@ const edges: IEdgeDocument[] = [
 
     // Professional Edges
     new Edge({
-        slug: 'adept', // ?
+        slug: 'adept',
         name: 'Адепт',
         group: 'professional',
         requirements: {
@@ -854,7 +843,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'assassin', // ?
+        slug: 'assassin',
         name: 'Убийца',
         group: 'professional',
         requirements: {
@@ -944,7 +933,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'courage', // ?
+        slug: 'liquid-courage',
         name: 'Глоток мужества',
         group: 'weird',
         requirements: {
@@ -953,7 +942,7 @@ const edges: IEdgeDocument[] = [
         },
     }),
     new Edge({
-        slug: 'zapaslivy', // ?
+        slug: 'scavenger',
         name: 'Запасливый',
         group: 'weird',
         requirements: {

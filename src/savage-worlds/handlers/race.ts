@@ -9,12 +9,7 @@ export const getRaces = async (req: express.Request, res: express.Response) => {
     try {
         const query = {};
         const races = await Race
-            .find(query)
-            .select([
-                'slug',
-                'name',
-                'major',
-            ]);
+            .find(query);
         return res.json({ races });
     } catch (e) {
         return res.status(500).json({ error: e.message });

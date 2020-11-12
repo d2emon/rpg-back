@@ -15,6 +15,7 @@ import mongoDb, {
 import generateRoutes from './routes/generate';
 import campaignRoutes from './routes/campaign';
 
+import swSettingRoutes from './savage-worlds/routes/settings';
 import swCharacterRoutes from './savage-worlds/routes/characters';
 import swRaceRoutes from './savage-worlds/routes/races';
 import swCharacterTemplateRoutes from './savage-worlds/routes/templates';
@@ -36,9 +37,17 @@ app.set('db', connect(process.env.MONGO_URI));
 mongoDb.on('error', (error: string) => debug(`${process.env.APP_NAME}:db:error`)(error));
 mongoDb.once('open', () => debug(`${process.env.APP_NAME}:db`)('MongoDB connected'));
 
+app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Content-Type","application/json");
+    next();
+});
+
 app.use('/api/v1.0/generate', generateRoutes);
 app.use('/api/v1.0/campaign', campaignRoutes);
 
+app.use('/api/v1.0/sw/setting', swSettingRoutes);
 app.use('/api/v1.0/sw/character', swCharacterRoutes);
 app.use('/api/v1.0/sw/race', swRaceRoutes);
 app.use('/api/v1.0/sw/template', swCharacterTemplateRoutes);

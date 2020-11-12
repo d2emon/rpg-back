@@ -4,5 +4,6 @@ export default {
     hindrance: (slug: string) => `${process.env.API_URL}api/v1.0/sw/hindrance/${slug}`,
     edge: (slug: string) => `${process.env.API_URL}api/v1.0/sw/edge/${slug}`,
     race: (slug: string) => `${process.env.API_URL}api/v1.0/sw/race/${slug}`,
+    origin: (slug: string) => `${process.env.API_URL}api/v1.0/sw/origin/${slug}`,
     characterTemplate: (slug: string) => `${process.env.API_URL}api/v1.0/sw/template/${slug}`,
 }

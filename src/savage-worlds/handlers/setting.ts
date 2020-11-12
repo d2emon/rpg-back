@@ -4,11 +4,13 @@ import CharacterTemplate from '../models/characterTemplate';
 import Skill from '../models/skill';
 import Edge from '../models/edge';
 import Hindrance from '../models/hindrance';
+import Origin from "../models/origin";
 
 const savageWorlds = {
     name: '',
     slug: 'default',
     races: {},
+    origins: { slug: '' },
     skills: {},
     templates: {
         slug: {
@@ -27,6 +29,22 @@ const redLand = {
     slug: 'red-land',
     races: {
         slug: 'human',
+    },
+    origins: {
+        slug: {
+            $in: [
+                'bourgeois',
+                'noble',
+                'declassified',
+                'savage',
+                'intellectual',
+                'cossack',
+                'peasant',
+                'tradesman',
+                'proletarian',
+                'foreigner',
+            ],
+        },
     },
     skills: {},
     templates: {
@@ -82,13 +100,13 @@ export const getSetting = async (req: express.Request, res: express.Response) =>
         const setting = settings[slug] || savageWorlds;
 
         const races = await Race.find(setting.races);
+        const origins = await Origin.find(setting.origins);
         const templates = await CharacterTemplate.find(setting.templates);
         const skills = await Skill.find(setting.skills);
         const edges = await Edge.find(setting.edges);
         const hindrances = await Hindrance.find(setting.hindrances);
         const items: string[] = []; // await Promise.resolve([]);
 
-        const origins: string[] = [];
         const movements: string[] = [];
 
         return res.json({

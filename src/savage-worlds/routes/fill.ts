@@ -15,6 +15,9 @@ import {
 import {
     fillCharacterTemplates,
 } from '../handlers/template';
+import {
+    fillOrigins,
+} from '../handlers/origin';
 
 const router = express.Router();
 
@@ -24,6 +27,7 @@ router.post('/skills', fillSkills);
 router.post('/edges', fillEdges);
 router.post('/hindrances', fillHindrances);
 router.post('/races', fillRaces);
+router.post('/origins', fillOrigins);
 router.post('/templates', fillCharacterTemplates);
 
 export default router;

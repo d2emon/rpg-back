@@ -140,16 +140,16 @@ const templates: ICharacterTemplateDocument[] = [
             vigor: { dice: 'd8' }, // 2
         },
         skills: {
-            notice: { dice: 'd4' },
-            war: { dice: 'd4' },
-            fighting: { dice: 'd10' },
-            intimidation: { dice: 'd6' },
-            shooting: { dice: 'd10' },
+            notice: { dice: 'd4' }, // 1
+            war: { dice: 'd4' }, // 1
+            fighting: { dice: 'd10' }, // 4
+            intimidation: { dice: 'd6' }, // 2
+            shooting: { dice: 'd10' }, // 4
         },
         additionalSkills: 0,
         edges: [
-            'danger-sense',
-            'luck',
+            'nerves-of-steel',
+            'brawny',
         ],
     }),
     /*
@@ -169,20 +169,25 @@ const templates: ICharacterTemplateDocument[] = [
     */
     new CharacterTemplate({
         slug: 'warrior',
-        name: 'Воин',
+        name: 'Воитель',
         stats: {
-            agility: { dice: 'd4' },
-            smarts: { dice: 'd4' },
-            spirit: { dice: 'd4' },
-            strength: { dice: 'd4' },
-            vigor: { dice: 'd4' },
+            agility: { dice: 'd8' }, // 2
+            smarts: { dice: 'd6' }, // 1
+            spirit: { dice: 'd6' }, // 1
+            strength: { dice: 'd6' }, // 1
+            vigor: { dice: 'd6' }, // 1
         },
         skills: {
+            fighting: { dice: 'd10', modifier: 1 }, // 4
+            intimidation: { dice: 'd4' }, // 1
+            education: { dice: 'd6' }, // 2
+            mystic: { dice: 'd8' }, // 3
+            shooting: { dice: 'd8' }, // 3
         },
         additionalSkills: 0,
         edges: [
-            'danger-sense',
-            'luck',
+            'arcane-background',
+            'trademark-weapon',
         ],
     }),
     /*
@@ -206,17 +211,25 @@ const templates: ICharacterTemplateDocument[] = [
         name: 'Дипломат',
         stats: {
             agility: { dice: 'd4' },
-            smarts: { dice: 'd4' },
-            spirit: { dice: 'd4' },
+            smarts: { dice: 'd8' }, // 2
+            spirit: { dice: 'd8' }, // 2
             strength: { dice: 'd4' },
-            vigor: { dice: 'd4' },
+            vigor: { dice: 'd6' }, // 1
         },
         skills: {
+            notice: { dice: 'd4' }, // 1
+            intimidation: { dice: 'd4' }, // 1
+            educationClassic: { dice: 'd6' }, // 2
+            educationReal: { dice: 'd6' }, // 2
+            taunt: { dice: 'd6' }, // 2
+            investigation: { dice: 'd6' }, // 2
+            persuasion: { dice: 'd8' }, // 3
+            streetwise: { dice: 'd6' }, // 2
         },
         additionalSkills: 0,
         edges: [
-            'danger-sense',
-            'luck',
+            'common-bond',
+            'connections',
         ],
     }),
     /*
@@ -243,17 +256,22 @@ const templates: ICharacterTemplateDocument[] = [
         name: 'Идеалист',
         stats: {
             agility: { dice: 'd4' },
-            smarts: { dice: 'd4' },
-            spirit: { dice: 'd4' },
-            strength: { dice: 'd4' },
-            vigor: { dice: 'd4' },
+            smarts: { dice: 'd8' }, // 2
+            spirit: { dice: 'd6' }, // 1
+            strength: { dice: 'd6' }, // 1
+            vigor: { dice: 'd6' }, // 1
         },
         skills: {
+            war: { dice: 'd6' }, // 2
+            fighting: { dice: 'd4' }, // 1
+            education: { dice: 'd6' }, // 2
+            mystic: { dice: 'd10' }, // 4
+            persuasion: { dice: 'd6' }, // 2
         },
-        additionalSkills: 0,
+        additionalSkills: 3,
         edges: [
-            'danger-sense',
-            'luck',
+            'command',
+            'arcane-background',
         ],
     }),
     /*
@@ -284,19 +302,19 @@ const templates: ICharacterTemplateDocument[] = [
             vigor: { dice: 'd4' },
         },
         skills: {
-            notice: { dice: 'd4', modifier: 2 },
-            fighting: { dice: 'd4' },
-            climbing: { dice: 'd4' },
-            stealth: { dice: 'd4' },
-            education: { dice: 'd6' },
-            mystic: { dice: 'd8' },
-            investigation: { dice: 'd8', modifier: 2 },
-            streetwise: { dice: 'd8', modifier: 2 },
+            notice: { dice: 'd4', modifier: 2 }, // 1
+            fighting: { dice: 'd4' }, // 1
+            climbing: { dice: 'd4' }, // 1
+            stealth: { dice: 'd4' }, // 1
+            education: { dice: 'd6' }, // 2
+            mystic: { dice: 'd8' }, // 3
+            investigation: { dice: 'd8', modifier: 2 }, // 3
+            streetwise: { dice: 'd8', modifier: 2 }, // 3
         },
         additionalSkills: 0,
         edges: [
-            'danger-sense',
-            'luck',
+            'arcane-background',
+            'investigator',
         ],
     }),
     /*
@@ -329,17 +347,17 @@ const templates: ICharacterTemplateDocument[] = [
             vigor: { dice: 'd6' }, // 1
         },
         skills: {
-            war: { dice: 'd6' },
-            fighting: { dice: 'd4' },
-            intimidation: { dice: 'd6' },
-            taunt: { dice: 'd6' },
-            persuasion: { dice: 'd6' },
-            streetwise: { dice: 'd6' },
+            war: { dice: 'd6' }, // 2
+            fighting: { dice: 'd4' }, // 1
+            intimidation: { dice: 'd6' }, // 2
+            taunt: { dice: 'd6' }, // 2
+            persuasion: { dice: 'd6' }, // 2
+            streetwise: { dice: 'd6' }, // 2
         },
-        additionalSkills: 0,
+        additionalSkills: 4,
         edges: [
-            'danger-sense',
-            'luck',
+            'command',
+            'common-bond',
         ],
     }),
     /*
@@ -372,16 +390,16 @@ const templates: ICharacterTemplateDocument[] = [
             vigor: { dice: 'd6' }, // 1
         },
         skills: {
-            notice: { dice: 'd4' },
-            classicEducation: { dice: 'd6' },
-            mystic: { dice: 'd10' },
-            investigation: { dice: 'd4' },
-            persuasion: { dice: 'd4' },
+            notice: { dice: 'd4' }, // 1
+            classicEducation: { dice: 'd6' }, // 2
+            mystic: { dice: 'd10' }, // 4
+            investigation: { dice: 'd4' }, // 1
+            persuasion: { dice: 'd4' }, // 1
         },
-        additionalSkills: 0,
+        additionalSkills: 6,
         edges: [
-            'danger-sense',
-            'luck',
+            'arcane-background',
+            'rapid-recharge',
         ],
     }),
     /*
@@ -411,22 +429,22 @@ const templates: ICharacterTemplateDocument[] = [
             vigor: { dice: 'd6' }, // 1
         },
         skills: {
-            riding: { dice: 'd4' },
-            notice: { dice: 'd6', modifier: 2 },
-            survival: { dice: 'd4' },
-            fighting: { dice: 'd8' },
-            climbing: { dice: 'd4' },
-            healing: { dice: 'd4' },
-            stealth: { dice: 'd4' },
-            swimming: { dice: 'd4' },
-            repair: { dice: 'd4' },
-            shooting: { dice: 'd6' },
-            streetwise: { dice: 'd4' },
+            riding: { dice: 'd4' }, // 1
+            notice: { dice: 'd6', modifier: 2 }, // 2
+            survival: { dice: 'd4' }, // 1
+            fighting: { dice: 'd8' }, // 3
+            climbing: { dice: 'd4' }, // 1
+            healing: { dice: 'd4' }, // 1
+            stealth: { dice: 'd4' }, // 1
+            swimming: { dice: 'd4' }, // 1
+            repair: { dice: 'd4' }, // 1
+            shooting: { dice: 'd6' }, // 2
+            streetwise: { dice: 'd4' }, // 1
         },
         additionalSkills: 0,
         edges: [
-            'danger-sense',
             'luck',
+            'alertness',
         ],
     }),
     /*
@@ -449,18 +467,26 @@ const templates: ICharacterTemplateDocument[] = [
         slug: 'crafter',
         name: 'Умелец',
         stats: {
-            agility: { dice: 'd4' },
-            smarts: { dice: 'd4' },
+            agility: { dice: 'd6' }, // 1
+            smarts: { dice: 'd10' }, // 3
             spirit: { dice: 'd4' },
             strength: { dice: 'd4' },
-            vigor: { dice: 'd4' },
+            vigor: { dice: 'd6' }, // 1
         },
         skills: {
+            notice: { dice: 'd8' }, // 3
+            fighting: { dice: 'd6' }, // 2
+            climbing: { dice: 'd4' }, // 1
+            healing: { dice: 'd4' }, // 1
+            stealth: { dice: 'd4' }, // 1
+            fix: { dice: 'd6' }, // 2
+            shooting: { dice: 'd4' }, // 1
+            persuasion: { dice: 'd4' }, // 1
         },
         additionalSkills: 0,
         edges: [
-            'danger-sense',
-            'luck',
+            'jack-of-all-trades',
+            'mc-gyver',
         ],
     }),
     /*
@@ -490,18 +516,17 @@ const templates: ICharacterTemplateDocument[] = [
             vigor: { dice: 'd4' },
         },
         skills: {
-            gambling: { dice: 'd6' },
-            intimidation: { dice: 'd6', modifier: 2 },
-            taunt: { dice: 'd4', modifier: 2 },
-            investigation: { dice: 'd4' },
-            persuasion: { dice: 'd8', modifier: 2 },
-            streetwise: { dice: 'd8', modifier: 2 },
-            lockPicking: { dice: 'd8' },
+            gambling: { dice: 'd6' }, // 2
+            intimidation: { dice: 'd6', modifier: 2 }, // 2
+            taunt: { dice: 'd4', modifier: 2 }, // 1
+            investigation: { dice: 'd4' }, // 1
+            persuasion: { dice: 'd8', modifier: 2 }, // 3
+            streetwise: { dice: 'd8', modifier: 2 }, // 3
         },
-        additionalSkills: 0,
+        additionalSkills: 3,
         edges: [
-            'danger-sense',
-            'luck',
+            'charismatic',
+            'strong-willed',
         ],
     }),
     /*

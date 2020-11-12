@@ -91,7 +91,7 @@ CharacterTemplateSchema.virtual('pace')
 
 CharacterTemplateSchema.virtual('parry')
     .get(function () {
-        return 2 + halfValue(this.skills.get('fight') || {})
+        return 2 + halfValue(this.skills.get('fighting') || {})
     });
 
 CharacterTemplateSchema.virtual('charisma')

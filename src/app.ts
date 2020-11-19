@@ -21,6 +21,7 @@ import swRaceRoutes from './savage-worlds/routes/races';
 import swOriginRoutes from './savage-worlds/routes/origins';
 import swCharacterTemplateRoutes from './savage-worlds/routes/templates';
 import swSkillRoutes from './savage-worlds/routes/skills';
+import swRacialTraitRoutes from './savage-worlds/routes/traits';
 import swEdgeRoutes from './savage-worlds/routes/edges';
 import swHindranceRoutes from './savage-worlds/routes/hindrances';
 import swFillRoutes from './savage-worlds/routes/fill';
@@ -54,6 +55,7 @@ app.use('/api/v1.0/sw/race', swRaceRoutes);
 app.use('/api/v1.0/sw/origin', swOriginRoutes);
 app.use('/api/v1.0/sw/template', swCharacterTemplateRoutes);
 app.use('/api/v1.0/sw/skill', swSkillRoutes);
+app.use('/api/v1.0/sw/racial-trait', swRacialTraitRoutes);
 app.use('/api/v1.0/sw/edge', swEdgeRoutes);
 app.use('/api/v1.0/sw/hindrance', swHindranceRoutes);
 

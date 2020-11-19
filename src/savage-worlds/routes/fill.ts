@@ -4,6 +4,9 @@ import {
 } from '../handlers/skill';
 import checkAdmin from '../middlewares/checkAdmin';
 import {
+    fillRacialTraits,
+} from '../handlers/trait';
+import {
     fillEdges,
 } from '../handlers/edge';
 import {
@@ -24,6 +27,7 @@ const router = express.Router();
 router.use(checkAdmin);
 
 router.post('/skills', fillSkills);
+router.post('/traits', fillRacialTraits);
 router.post('/edges', fillEdges);
 router.post('/hindrances', fillHindrances);
 router.post('/races', fillRaces);

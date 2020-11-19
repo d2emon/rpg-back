@@ -5,6 +5,7 @@ import Skill from '../models/skill';
 import Edge from '../models/edge';
 import Hindrance from '../models/hindrance';
 import Origin from "../models/origin";
+import RacialTrait from "../models/racialTrait";
 
 const savageWorlds = {
     name: '',
@@ -20,6 +21,7 @@ const savageWorlds = {
             ],
         },
     },
+    traits: {},
     edges: {},
     hindrances: {},
     items: {},
@@ -65,6 +67,7 @@ const redLand = {
             ],
         },
     },
+    traits: {},
     edges: {},
     hindrances: {},
     items: {},
@@ -103,6 +106,7 @@ export const getSetting = async (req: express.Request, res: express.Response) =>
         const origins = await Origin.find(setting.origins);
         const templates = await CharacterTemplate.find(setting.templates);
         const skills = await Skill.find(setting.skills);
+        const traits = await RacialTrait.find(setting.traits);
         const edges = await Edge.find(setting.edges);
         const hindrances = await Hindrance.find(setting.hindrances);
         const items: string[] = []; // await Promise.resolve([]);
@@ -116,6 +120,7 @@ export const getSetting = async (req: express.Request, res: express.Response) =>
                 races,
                 templates,
                 skills,
+                traits,
                 edges,
                 hindrances,
                 items,

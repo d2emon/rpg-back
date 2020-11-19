@@ -5,7 +5,7 @@ const origins: IOriginDocument[] = [
         slug: 'bourgeois',
         name: 'Буржуа',
         traits: [
-            'wealth',
+            'rich',
             'education',
             'class-enemy',
             'hunted',

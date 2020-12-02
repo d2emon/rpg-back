@@ -10,7 +10,10 @@ import {
 
 import generateRoutes from './routes/generate';
 import campaignRoutes from './routes/campaign';
+
+import dnd5RaceRoutes from './dnd5/routes/race';
 import dnd5CharacterRoutes from './dnd5/routes/characters';
+import dnd5FillRoutes from './dnd5/routes/fill';
 
 const app =express();
 
@@ -27,7 +30,9 @@ app.use(express.static(publicPath));
 app.use('/v1/generate', generateRoutes);
 app.use('/v1/campaign', campaignRoutes);
 
-app.use('/v1.0/dnd5/character', dnd5CharacterRoutes);
+app.use('/api/v1.0/dnd5/race', dnd5RaceRoutes);
+app.use('/api/v1.0/dnd5/character', dnd5CharacterRoutes);
+app.use('/api/v1.0/dnd5/fill', dnd5FillRoutes);
 
 app.use(error404);
 app.use(errorHandler(app.get('env')));

@@ -70,6 +70,6 @@ RaceSchema.set('toJSON', {
     },
 });
 
-const Race: IRaceModel = mongoose.model<IRaceDocument, IRaceModel>('Race', RaceSchema);
+const Race: IRaceModel = mongoose.model<IRaceDocument, IRaceModel>('DnDRace', RaceSchema);
 
 export default Race;

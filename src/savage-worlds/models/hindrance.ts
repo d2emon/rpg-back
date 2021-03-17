@@ -52,6 +52,6 @@ HindranceSchema.set('toJSON', {
     },
 });
 
-const Hindrance: IHindranceModel = mongoose.model<IHindranceDocument, IHindranceModel>('Hindrance', HindranceSchema);
+const Hindrance: IHindranceModel = mongoose.model<IHindranceDocument, IHindranceModel>('SavageWorldsHindrance', HindranceSchema);
 
 export default Hindrance;

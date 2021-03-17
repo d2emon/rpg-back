@@ -51,6 +51,6 @@ OriginSchema.set('toObject', {
     },
 });
 
-const Origin: IOriginModel = mongoose.model<IOriginDocument, IOriginModel>('Origin', OriginSchema);
+const Origin: IOriginModel = mongoose.model<IOriginDocument, IOriginModel>('SavageWorldsOrigin', OriginSchema);
 
 export default Origin;

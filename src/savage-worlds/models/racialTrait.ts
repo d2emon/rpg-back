@@ -50,6 +50,6 @@ RacialTraitSchema.set('toJSON', {
     },
 });
 
-const RacialTrait: IRacialTraitModel = mongoose.model<IRacialTraitDocument, IRacialTraitModel>('RacialTrait', RacialTraitSchema);
+const RacialTrait: IRacialTraitModel = mongoose.model<IRacialTraitDocument, IRacialTraitModel>('SavageWorldsRacialTrait', RacialTraitSchema);
 
 export default RacialTrait;

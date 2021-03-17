@@ -52,6 +52,6 @@ RaceSchema.set('toJSON', {
     },
 });
 
-const Race: IRaceModel = mongoose.model<IRaceDocument, IRaceModel>('Race', RaceSchema);
+const Race: IRaceModel = mongoose.model<IRaceDocument, IRaceModel>('SavageWorldsRace', RaceSchema);
 
 export default Race;

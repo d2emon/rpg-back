@@ -28,7 +28,7 @@ export interface NPC {
     death?: Death;
 }
 
-const npcs: NPC[] = [
+const characters: NPC[] = [
     {
         characterId: 1,
         name: 'Имя',
@@ -38,4 +38,4 @@ const npcs: NPC[] = [
     },
 ]
 
-export default npcs;
+export default characters;

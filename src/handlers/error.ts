@@ -18,7 +18,7 @@ const errorResponse = (message: string, code?: number, data?: any) => ({
     },
 })
 
-export const error404 = (req: express.Request, res: any, next: express.NextFunction) => res
+export const error404 = (req: express.Request, res: any) => res
     .status(404)
     .json(errorResponse('Not Found', 404))
 

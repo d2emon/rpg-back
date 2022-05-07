@@ -123,6 +123,6 @@ CharacterTemplateSchema.set('toObject', {
     },
 });
 
-const CharacterTemplate: ICharacterTemplateModel = mongoose.model<ICharacterTemplateDocument, ICharacterTemplateModel>('CharacterTemplate', CharacterTemplateSchema);
+const CharacterTemplate: ICharacterTemplateModel = mongoose.model<ICharacterTemplateDocument, ICharacterTemplateModel>('SavageWorldsCharacterTemplate', CharacterTemplateSchema);
 
 export default CharacterTemplate;

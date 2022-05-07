@@ -72,6 +72,6 @@ EdgeSchema.set('toJSON', {
     },
 });
 
-const Edge: IEdgeModel = mongoose.model<IEdgeDocument, IEdgeModel>('Edge', EdgeSchema);
+const Edge: IEdgeModel = mongoose.model<IEdgeDocument, IEdgeModel>('SavageWorldsEdge', EdgeSchema);
 
 export default Edge;

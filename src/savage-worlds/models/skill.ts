@@ -55,6 +55,6 @@ SkillSchema.set('toJSON', {
     },
 });
 
-const Skill: ISkillModel = mongoose.model<ISkillDocument, ISkillModel>('Skill', SkillSchema);
+const Skill: ISkillModel = mongoose.model<ISkillDocument, ISkillModel>('SavageWorldsSkill', SkillSchema);
 
 export default Skill;

@@ -53,6 +53,10 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
 app.use('/api/v1.0/generate', generateRoutes);
 app.use('/api/v1.0/campaign', campaignRoutes);
 
+app.use('/api/v1.0/dnd5/race', dnd5RaceRoutes);
+app.use('/api/v1.0/dnd5/character', dnd5CharacterRoutes);
+app.use('/api/v1.0/dnd5/fill', dnd5FillRoutes);
+
 app.use('/api/v1.0/sw/setting', swSettingRoutes);
 app.use('/api/v1.0/sw/character', swCharacterRoutes);
 app.use('/api/v1.0/sw/race', swRaceRoutes);
@@ -64,10 +68,6 @@ app.use('/api/v1.0/sw/edge', swEdgeRoutes);
 app.use('/api/v1.0/sw/hindrance', swHindranceRoutes);
 
 app.use('/api/v1.0/sw/admin/fill', swFillRoutes);
-
-app.use('/api/v1.0/dnd5/race', dnd5RaceRoutes);
-app.use('/api/v1.0/dnd5/character', dnd5CharacterRoutes);
-app.use('/api/v1.0/dnd5/fill', dnd5FillRoutes);
 
 app.use(error404);
 app.use(errorHandler(app.get('env')));

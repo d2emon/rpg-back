@@ -165,6 +165,6 @@ CharacterSchema.set('toJSON', {
     },
 });
 
-const Character: ICharacterModel = mongoose.model<ICharacterDocument, ICharacterModel>('Character', CharacterSchema);
+const Character: ICharacterModel = mongoose.model<ICharacterDocument, ICharacterModel>('SavageWorldsCharacter', CharacterSchema);
 
 export default Character;

@@ -124,6 +124,6 @@ CharacterSchema.set('toJSON', {
     },
 });
 
-const Character: ICharacterModel = mongoose.model<ICharacterDocument, ICharacterModel>('Character', CharacterSchema);
+const Character: ICharacterModel = mongoose.model<ICharacterDocument, ICharacterModel>('DnDCharacter', CharacterSchema);
 
 export default Character;

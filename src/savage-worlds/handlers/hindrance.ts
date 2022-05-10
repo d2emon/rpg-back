@@ -73,7 +73,7 @@ export const fillHindrances = async (req: express.Request, res: express.Response
             ]);
 
         const found: string[] = models.map((hindrance) => hindrance.slug);
-        const updates: Query<any>[] = [];
+        const updates: Query<any, any>[] = [];
         const newHindrances: IHindranceDocument[] = hindrancesFixture.reduce(
             (hindrances: IHindranceDocument[], hindrance: IHindranceDocument) => {
                 if (found.indexOf(hindrance.slug) < 0) {

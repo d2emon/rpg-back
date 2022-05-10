@@ -68,7 +68,7 @@ export const fillCharacterTemplates = async (req: express.Request, res: express.
             ]);
 
         const found: string[] = models.map((template) => template.slug);
-        const updates: Query<any>[] = [];
+        const updates: Query<any, any>[] = [];
         const newCharacterTemplates: ICharacterTemplateDocument[] = templatesFixture.reduce(
             (templates: ICharacterTemplateDocument[], template: ICharacterTemplateDocument) => {
                 if (found.indexOf(template.slug) < 0) {

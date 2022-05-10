@@ -68,7 +68,7 @@ export const fillRaces = async (req: express.Request, res: express.Response) => 
             ]);
 
         const found: string[] = models.map((race) => race.slug);
-        const updates: Query<any>[] = [];
+        const updates: Query<any, any>[] = [];
         const newRaces: IRaceDocument[] = racesFixture.reduce(
             (races: IRaceDocument[], race: IRaceDocument) => {
                 if (found.indexOf(race.slug) < 0) {

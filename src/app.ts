@@ -1,16 +1,18 @@
-import bodyParser from 'body-parser'
-import debug from 'debug';
-import express from 'express'
-// import mongoose from 'mongoose'
-import path from 'path'
-import logger from 'morgan'
+// - // import bodyParser from 'body-parser';
+// + // import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import express from 'express';
+import path from 'path';
+import logger from 'morgan';
 import {
     error404,
     errorHandler,
 } from './handlers/error';
+/*
 import mongoDb, {
     connect,
 } from './helpers/mongo';
+*/
 
 import generateRoutes from './routes/generate';
 import campaignRoutes from './routes/campaign';
@@ -35,13 +37,15 @@ const app =express();
 const publicPath = path.join(__dirname, '..', 'public');
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+// app.use(bodyParser.json()); // -
+// app.use(bodyParser.urlencoded({ extended: true })); // -
+// app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(publicPath));
 
-app.set('db', connect(process.env.MONGO_URI));
-mongoDb.on('error', (error: string) => debug(`${process.env.APP_NAME}:db:error`)(error));
-mongoDb.once('open', () => debug(`${process.env.APP_NAME}:db`)('MongoDB connected'));
+// app.set('db', connect(config.MONGO_URI));
 
 app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
     res.header("Access-Control-Allow-Origin", "*");

@@ -72,7 +72,7 @@ export const fillSkills = async (req: express.Request, res: express.Response) =>
             ]);
 
         const found: string[] = models.map((skill) => skill.slug);
-        const updates: Query<any>[] = [];
+        const updates: Query<any, any>[] = [];
         const newSkills: ISkillDocument[] = skillsFixture.reduce(
             (skills: ISkillDocument[], skill: ISkillDocument) => {
                 if (found.indexOf(skill.slug) < 0) {

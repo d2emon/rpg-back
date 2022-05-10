@@ -68,7 +68,7 @@ export const fillOrigins = async (req: express.Request, res: express.Response) =
             ]);
 
         const found: string[] = models.map((origin) => origin.slug);
-        const updates: Query<any>[] = [];
+        const updates: Query<any, any>[] = [];
         const newOrigins: IOriginDocument[] = originsFixture.reduce(
             (origins: IOriginDocument[], origin: IOriginDocument) => {
                 if (found.indexOf(origin.slug) < 0) {

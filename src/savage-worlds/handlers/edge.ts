@@ -73,7 +73,7 @@ export const fillEdges = async (req: express.Request, res: express.Response) => 
             ]);
 
         const found: string[] = models.map((edge) => edge.slug);
-        const updates: Query<any>[] = [];
+        const updates: Query<any, any>[] = [];
         const newEdges: IEdgeDocument[] = edgesFixture.reduce(
             (edges: IEdgeDocument[], edge: IEdgeDocument) => {
                 if (found.indexOf(edge.slug) < 0) {

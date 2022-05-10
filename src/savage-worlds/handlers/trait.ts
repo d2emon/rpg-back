@@ -73,7 +73,7 @@ export const fillRacialTraits = async (req: express.Request, res: express.Respon
             ]);
 
         const found: string[] = models.map((racialTrait) => racialTrait.slug);
-        const updates: Query<any>[] = [];
+        const updates: Query<any, any>[] = [];
         const newRacialTraits: IRacialTraitDocument[] = racialTraitsFixture.reduce(
             (racialTraits: IRacialTraitDocument[], racialTrait: IRacialTraitDocument) => {
                 if (found.indexOf(racialTrait.slug) < 0) {
